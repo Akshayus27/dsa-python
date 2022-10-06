@@ -15,8 +15,8 @@ class Stack:
             print('Stack is full');
             return
         
-        self.stack.append(item)
         self.head += 1
+        self.stack.insert(self.head, item)
 
         return item
 
@@ -24,14 +24,25 @@ class Stack:
         if self.is_empty():
             print('Stack is empty')
             return
+
         self.head -= 1
+
         return self.stack[self.head + 1]
 
     def peek(self):
         if self.is_empty():
             print('Stack is empty to peek')
             return
+
         return self.stack[self.head]
 
-    def print_stack(self):
-        print(self.stack)
+    def _print(self):
+        if self.is_empty():
+            print('Stack is empty')
+            return
+        
+        current_stack = []
+        for idx in range(self.head, -1, -1):
+            current_stack.append(self.stack[idx])
+
+        print(current_stack)
