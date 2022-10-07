@@ -1,12 +1,17 @@
 from stack import Stack
 from queue import Queue
+from deque import Deque
 
 if __name__ == '__main__':
-    queue = Queue(4)
-    queue.enqueue(1)
-    queue.enqueue(2)
-    queue.enqueue(3)
-    queue.enqueue(4)
-    queue.dequeue()
-    queue.enqueue(5)
+    queue = Deque(4)
+    queue.insert_first(1)
+    queue._print()
+    queue.insert_first(2)
+    queue._print()
+    queue.insert_first(3)
+    queue._print()
+    queue.insert_first(4)
+    queue._print()
+    queue.remove_first()
+    queue.insert_last(5)
     queue._print()
