@@ -2,16 +2,20 @@ from stack import Stack
 from queue import Queue
 from deque import Deque
 
+from singly_linked_list import Singly_Linked_List
+from doubly_linked_list import Doubly_Linked_List
+from circular_linked_list import Circular_Linked_List
+
 if __name__ == '__main__':
-    queue = Deque(4)
-    queue.insert_first(1)
-    queue._print()
-    queue.insert_first(2)
-    queue._print()
-    queue.insert_first(3)
-    queue._print()
-    queue.insert_first(4)
-    queue._print()
-    queue.remove_first()
-    queue.insert_last(5)
-    queue._print()
+    node = Circular_Linked_List()
+    node.insert_last(2)
+    node.insert_last(3)
+    node.insert_last(5)
+    node.insert_last(6)
+    node.insert(3, 2)
+    node.insert_first(1)
+    node._print()
+    node.remove_first()
+    node._print()
+    node.remove_last()
+    node._print()
